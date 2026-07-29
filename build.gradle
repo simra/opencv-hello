@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Gradle downloads the OpenCV Java API AND the bundled native
+    // libraries (Windows/macOS/Linux) from Maven Central automatically.
+    // No manual OpenCV download required.
+    implementation 'org.openpnp:opencv:4.9.0-0'
+}
+
+java {
+    // Match the WPILib bundled JDK.
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+application {
+    mainClass = 'App'
+}
